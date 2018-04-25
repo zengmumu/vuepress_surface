@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端面试宝典</title>
+    <meta name="description" content="前端面试宝典">
+    
+    
+    <link rel="preload" href="/vuepress_surface/assets/css/17.styles.ba249118.css" as="style"><link rel="preload" href="/vuepress_surface/assets/js/app.9a89dc1f.js" as="script"><link rel="preload" href="/vuepress_surface/assets/js/5.2371e1cf.js" as="script"><link rel="prefetch" href="/vuepress_surface/assets/js/9.f311b64e.js"><link rel="prefetch" href="/vuepress_surface/assets/js/1.5d45f657.js"><link rel="prefetch" href="/vuepress_surface/assets/js/2.f7833041.js"><link rel="prefetch" href="/vuepress_surface/assets/js/3.3cd98bcf.js"><link rel="prefetch" href="/vuepress_surface/assets/js/4.e67b7841.js"><link rel="prefetch" href="/vuepress_surface/assets/js/6.baacf2ac.js"><link rel="prefetch" href="/vuepress_surface/assets/js/7.1fc1b9e7.js"><link rel="prefetch" href="/vuepress_surface/assets/js/8.1571d003.js"><link rel="prefetch" href="/vuepress_surface/assets/js/0.cc952582.js"><link rel="prefetch" href="/vuepress_surface/assets/js/10.a27745d2.js"><link rel="prefetch" href="/vuepress_surface/assets/js/11.8094121c.js"><link rel="prefetch" href="/vuepress_surface/assets/js/12.25d3a5c6.js"><link rel="prefetch" href="/vuepress_surface/assets/js/13.5dae3d6c.js"><link rel="prefetch" href="/vuepress_surface/assets/js/14.d0da2be6.js"><link rel="prefetch" href="/vuepress_surface/assets/js/15.1a9662af.js"><link rel="prefetch" href="/vuepress_surface/assets/js/16.17ff12fe.js">
+    <link rel="stylesheet" href="/vuepress_surface/assets/css/17.styles.ba249118.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/vuepress_surface/" class="home-link router-link-active"><!----><span class="site-name">
+      前端面试宝典
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><!----></div></header><div class="sidebar-mask"></div><div class="sidebar"><!----><ul class="sidebar-links"><li><a href="/vuepress_surface/" class="sidebar-link">常见问题</a></li><li><a href="/vuepress_surface/Regexp.html" class="active sidebar-link">常见正则</a></li><li><a href="/vuepress_surface/Cache.html" class="sidebar-link">HTTP缓存机制</a></li><li><a href="/vuepress_surface/HttpAndHttps.html" class="sidebar-link">浅析HTTP和HTTPS</a></li><li><a href="/vuepress_surface/HttpMethod.html" class="sidebar-link">Get与Post区别</a></li><li><a href="/vuepress_surface/Dns.html" class="sidebar-link">DNS解析原理</a></li><li><a href="/vuepress_surface/Tcp3.html" class="sidebar-link">TCP握手协议(三次握手)</a></li><li><a href="/vuepress_surface/Tcp4.html" class="sidebar-link">连接终止协议(四次挥手)</a></li><li><a href="/vuepress_surface/Url.html" class="sidebar-link">输入URL到显示页面的流程</a></li><li><a href="/vuepress_surface/Felx.html" class="sidebar-link">Flex布局</a></li><li><a href="/vuepress_surface/Boolean.html" class="sidebar-link">布尔操作符</a></li><li><a href="/vuepress_surface/RedrawRefulx.html" class="sidebar-link">重绘和回流</a></li><li><a href="/vuepress_surface/PageRendering.html" class="sidebar-link">页面渲染原理</a></li><li><a href="/vuepress_surface/HttpCode.html" class="sidebar-link">常见HTTP状态码</a></li><li><a href="/vuepress_surface/Hack.html" class="sidebar-link">常见兼容问题及解决方案</a></li><li><a href="/vuepress_surface/VerticalCenter.html" class="sidebar-link">垂直居中的几种方法</a></li><li><a href="/vuepress_surface/Trigon.html" class="sidebar-link">CSS实现三角形</a></li></ul></div><div class="page"><div class="content"><p>public class Validator {
+/**
+* 正则表达式：验证用户名
+* ^表示输入字符串的开始位置，$匹配输入字符串的结尾位置
+* \w表示匹配任何字类字符（相当于[a-zA-Z0-9_]）
+<em>/
+public static final String REGEX_USERNAME = &quot;^[a-zA-Z]\w{5,17}$&quot;; //字母开头，字符串由6到18位字母、数字和下划线组成
+/</em>*
+* 正则表达式：验证密码
+<em>/
+public static final String REGEX_PASSWORD = &quot;^[a-zA-Z0-9]{6,16}$&quot;;  //由6到16位数字或字母组成
+/</em>*
+* 正则表达式：验证手机号
+* [^4,\D]表示除4以外的数字
+* 130-139、15开头的除了154、180和185-189开头的号码
+<em>/
+public static final String REGEX_MOBILE = &quot;^((13[0-9])|(15[^4,\D])|(18[0,5-9]))\d{8}$&quot;;
+/</em>*
+* +表示出现过一次或多次，-|\.表示匹配-或.,?表示零次或一次，
+* 正则表达式：验证邮箱
+* 以数字或字母开头，@的左边允许有-或者.，@右边以若干字母或数字开头，后面可以有-号，再加上字母或数字，也可以没有，再加上.,最后加上2个以上的字母结尾
+<em>/
+public static final String REGEX_EMAIL = &quot;^([a-z0-9A-Z]+[-|\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\.)+[a-zA-Z]{2,}$&quot;;
+/</em>*
+* 正则表达式：验证汉字
+* 表示匹配四位十六进制数表示的 Unicode 字符，中文字符的范围就是4e00-9fa5
+<em>/
+public static final String REGEX_CHINESE = &quot;^[\u4e00-\u9fa5],{0,}$&quot;;
+/</em>*
+* 正则表达式：验证身份证
+* \d是匹配数字字符，表示身份证号可取15或18位
+<em>/
+public static final String REGEX_ID_CARD = &quot;(^\d{18}$)|(^\d{15}$)&quot;;
+/</em>*
+* 正则表达式：验证URL
+* http或https开头，.号前的数字，字母或下划线出现一次或多次，.后面出现一个或多个字母
+<em>/
+public static final String REGEX_URL = &quot;http(s)?😕/([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]</em>)?&quot;;</p><pre><code>/**
+ * 正则表达式：验证IP地址
+ * 25开头，如251、252但是不能超过255。。。
+ */
+public static final String REGEX_IP_ADDR = &quot;(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)&quot;;
+
+/**
+ * 校验用户名
+ *
+ * @param username
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isUsername(String username) {
+    return Pattern.matches(REGEX_USERNAME, username);
+}
+
+/**
+ * 校验密码
+ *
+ * @param password
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isPassword(String password) {
+    return Pattern.matches(REGEX_PASSWORD, password);
+}
+
+/**
+ * 校验手机号
+ *
+ * @param mobile
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isMobile(String mobile) {
+    return Pattern.matches(REGEX_MOBILE, mobile);
+}
+
+/**
+ * 校验邮箱
+ *
+ * @param email
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isEmail(String email) {
+    return Pattern.matches(REGEX_EMAIL, email);
+}
+
+/**
+ * 校验汉字
+ *
+ * @param chinese
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isChinese(String chinese) {
+    return Pattern.matches(REGEX_CHINESE, chinese);
+}
+
+/**
+ * 校验身份证
+ *
+ * @param idCard
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isIDCard(String idCard) {
+    return Pattern.matches(REGEX_ID_CARD, idCard);
+}
+
+/**
+ * 校验URL
+ *
+ * @param url
+ * @return 校验通过返回true，否则返回false
+ */
+public static boolean isUrl(String url) {
+    return Pattern.matches(REGEX_URL, url);
+}
+
+/**
+ * 校验IP地址
+ *
+ * @param ipAddr
+ * @return
+ */
+public static boolean isIPAddr(String ipAddr) {
+    return Pattern.matches(REGEX_IP_ADDR, ipAddr);
+}
+
+public static void main(String[] args) {
+    String username = &quot;http://baidu.com&quot;;
+    System.out.println(Validator.isUsername(username));
+    System.out.println(Validator.isChinese(username));
+    System.out.println(Validator.isUrl(username));
+}
+</code></pre><p>}</p></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/vuepress_surface/" class="prev router-link-active">
+          常见问题
+        </a></span><span class="next"><a href="/vuepress_surface/Cache.html">
+          HTTP缓存机制
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/vuepress_surface/assets/js/5.2371e1cf.js" defer></script><script src="/vuepress_surface/assets/js/app.9a89dc1f.js" defer></script>
+  </body>
+</html>

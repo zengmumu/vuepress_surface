@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端面试宝典 | 兼容性问题及其解决方案</title>
+    <meta name="description" content="前端面试宝典">
+    
+    
+    <link rel="preload" href="/vuepress_surface/assets/css/17.styles.ba249118.css" as="style"><link rel="preload" href="/vuepress_surface/assets/js/app.9a89dc1f.js" as="script"><link rel="preload" href="/vuepress_surface/assets/js/12.25d3a5c6.js" as="script"><link rel="prefetch" href="/vuepress_surface/assets/js/9.f311b64e.js"><link rel="prefetch" href="/vuepress_surface/assets/js/1.5d45f657.js"><link rel="prefetch" href="/vuepress_surface/assets/js/2.f7833041.js"><link rel="prefetch" href="/vuepress_surface/assets/js/3.3cd98bcf.js"><link rel="prefetch" href="/vuepress_surface/assets/js/4.e67b7841.js"><link rel="prefetch" href="/vuepress_surface/assets/js/5.2371e1cf.js"><link rel="prefetch" href="/vuepress_surface/assets/js/6.baacf2ac.js"><link rel="prefetch" href="/vuepress_surface/assets/js/7.1fc1b9e7.js"><link rel="prefetch" href="/vuepress_surface/assets/js/8.1571d003.js"><link rel="prefetch" href="/vuepress_surface/assets/js/0.cc952582.js"><link rel="prefetch" href="/vuepress_surface/assets/js/10.a27745d2.js"><link rel="prefetch" href="/vuepress_surface/assets/js/11.8094121c.js"><link rel="prefetch" href="/vuepress_surface/assets/js/13.5dae3d6c.js"><link rel="prefetch" href="/vuepress_surface/assets/js/14.d0da2be6.js"><link rel="prefetch" href="/vuepress_surface/assets/js/15.1a9662af.js"><link rel="prefetch" href="/vuepress_surface/assets/js/16.17ff12fe.js">
+    <link rel="stylesheet" href="/vuepress_surface/assets/css/17.styles.ba249118.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/vuepress_surface/" class="home-link router-link-active"><!----><span class="site-name">
+      前端面试宝典
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><!----></div></header><div class="sidebar-mask"></div><div class="sidebar"><!----><ul class="sidebar-links"><li><a href="/vuepress_surface/" class="sidebar-link">常见问题</a></li><li><a href="/vuepress_surface/Regexp.html" class="sidebar-link">常见正则</a></li><li><a href="/vuepress_surface/Cache.html" class="sidebar-link">HTTP缓存机制</a></li><li><a href="/vuepress_surface/HttpAndHttps.html" class="sidebar-link">浅析HTTP和HTTPS</a></li><li><a href="/vuepress_surface/HttpMethod.html" class="sidebar-link">Get与Post区别</a></li><li><a href="/vuepress_surface/Dns.html" class="sidebar-link">DNS解析原理</a></li><li><a href="/vuepress_surface/Tcp3.html" class="sidebar-link">TCP握手协议(三次握手)</a></li><li><a href="/vuepress_surface/Tcp4.html" class="sidebar-link">连接终止协议(四次挥手)</a></li><li><a href="/vuepress_surface/Url.html" class="sidebar-link">输入URL到显示页面的流程</a></li><li><a href="/vuepress_surface/Felx.html" class="sidebar-link">Flex布局</a></li><li><a href="/vuepress_surface/Boolean.html" class="sidebar-link">布尔操作符</a></li><li><a href="/vuepress_surface/RedrawRefulx.html" class="sidebar-link">重绘和回流</a></li><li><a href="/vuepress_surface/PageRendering.html" class="sidebar-link">页面渲染原理</a></li><li><a href="/vuepress_surface/HttpCode.html" class="sidebar-link">常见HTTP状态码</a></li><li><a href="/vuepress_surface/Hack.html" class="active sidebar-link">常见兼容问题及解决方案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#了解兼容性情况" class="sidebar-link">了解兼容性情况</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#浏览器不支持时怎么办" class="sidebar-link">浏览器不支持时怎么办</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#不同浏览器使用不同的样式" class="sidebar-link">不同浏览器使用不同的样式</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#css2选择器兼容性" class="sidebar-link">CSS2选择器兼容性</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#css3选择器兼容性" class="sidebar-link">CSS3选择器兼容性</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#浏览器前缀" class="sidebar-link">浏览器前缀</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#语义化的html5标签" class="sidebar-link">语义化的HTML5标签</a></li><li class="sidebar-sub-header"><a href="/vuepress_surface/Hack.html#浏览器bug" class="sidebar-link">浏览器bug</a></li></ul></li><li><a href="/vuepress_surface/VerticalCenter.html" class="sidebar-link">垂直居中的几种方法</a></li><li><a href="/vuepress_surface/Trigon.html" class="sidebar-link">CSS实现三角形</a></li></ul></div><div class="page"><div class="content"><h1 id="兼容性问题及其解决方案"><a href="#兼容性问题及其解决方案" aria-hidden="true" class="header-anchor">#</a> 兼容性问题及其解决方案</h1><p>本文的内容源自<a href="https://t.75team.com/video" target="_blank" rel="noopener noreferrer">360奇舞团奇舞学院课程</a>。</p><h2 id="了解兼容性情况"><a href="#了解兼容性情况" aria-hidden="true" class="header-anchor">#</a> 了解兼容性情况</h2><p>网站比如 <a href="http://caniuse.com/" target="_blank" rel="noopener noreferrer">caniuse</a>;<br>
+了解浏览器份额：<a href="http://tongji.baidu.com/data/browser" target="_blank" rel="noopener noreferrer">百度统计</a></p><h2 id="浏览器不支持时怎么办"><a href="#浏览器不支持时怎么办" aria-hidden="true" class="header-anchor">#</a> 浏览器不支持时怎么办</h2><p>比如：</p><h3 id="_1-降级"><a href="#_1-降级" aria-hidden="true" class="header-anchor">#</a> 1.降级</h3><pre><code>box-shadow: IE9+，不支持时没有阴影
+border-radius： IE9+，不支持时没有圆角
+</code></pre><h3 id="_2-效果稍微差的替代方案"><a href="#_2-效果稍微差的替代方案" aria-hidden="true" class="header-anchor">#</a> 2.效果稍微差的替代方案</h3><pre><code>min-height: 100vh；（IE9+），用min-height: 800px；来替代。
+</code></pre><h3 id="_3-使用一些替代方案"><a href="#_3-使用一些替代方案" aria-hidden="true" class="header-anchor">#</a> 3.使用一些替代方案</h3><pre><code>opcity: 0.5;(IE8+) 用filter： alpha(opacity=50)；来替代。
+</code></pre><h3 id="_4-可以使用javascript让浏览器支持"><a href="#_4-可以使用javascript让浏览器支持" aria-hidden="true" class="header-anchor">#</a> 4.可以使用javascript让浏览器支持</h3><pre><code>使用html5shiv.js让IE6~8支持新标签
+使用DD_delatedPNG.js让IE6支持半透明方式
+</code></pre><h2 id="不同浏览器使用不同的样式"><a href="#不同浏览器使用不同的样式" aria-hidden="true" class="header-anchor">#</a> 不同浏览器使用不同的样式</h2><ul><li>@supports</li><li>层叠</li><li>条件注释</li><li>浏览器怪癖</li></ul><h3 id="_1-supports-不常用"><a href="#_1-supports-不常用" aria-hidden="true" class="header-anchor">#</a> 1.@supports(不常用)</h3><p>比如：</p><pre><code>	.container{
+		display: flex;
+	}
+
+ 	 @supports (display: grid) {
+        .container{
+            display: grid;
+            grid-template: repeat(4,1fr) / 50px 100px;
+        }
+    }
+</code></pre><p>缺点：IE浏览器不兼容。只能是未来的形式。</p><p>当前处理浏览器兼容性问题的方案是：浏览器hack。如下：</p><h3 id="_2-层叠"><a href="#_2-层叠" aria-hidden="true" class="header-anchor">#</a> 2.层叠</h3><p>同一个属性，后面书写的值覆盖前面书写的值。</p><pre><code>	p{
+		line-height: 2;
+		line-height: 3;  //2被覆盖
+	}
+</code></pre><p>（对浏览器）无效的属性（值）会被忽略</p><pre><code>p{
+	display: table;
+	display: flex;
+}
+</code></pre><h3 id="_3-条件注释"><a href="#_3-条件注释" aria-hidden="true" class="header-anchor">#</a> 3.条件注释</h3><p>IE7:</p><pre><code>&lt;!--[if IE 7]&gt;  
+	&lt;p&gt;只能在IE7下见到我&lt;/p&gt;
+&lt;![endif]--&gt;
+</code></pre><p>IE8：</p><pre><code>&lt;!-[if IE 8]&gt;  
+	&lt;p&gt;只能在IE8下见到我&lt;/p&gt;
+&lt;![endif]--&gt;
+</code></pre><p>其他如(针对IE9及IE9以下的版本)：</p><pre><code>&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;ie6&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;&lt;html class=&quot;ie7&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;&lt;html class=&quot;ie8&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 9]&gt;&lt;html class=&quot;ie9&quot;&gt;&lt;![endif]--&gt;
+</code></pre><p><code>&lt;html&gt;</code></p><p>举个例子：</p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .nb{width: 20px;height: 20px;background-color: blue;}
+    &lt;/style&gt;
+    &lt;!--[if IE 7]&gt;
+        &lt;p&gt;只有在IE7中可以看到&lt;/p&gt;
+    &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;nb&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="_4-浏览器怪癖"><a href="#_4-浏览器怪癖" aria-hidden="true" class="header-anchor">#</a> 4.浏览器怪癖</h3><p>第三种我们非常常用的兼容处理方式就是研究浏览器怪癖：</p><ul><li><p>IE7:</p><pre><code>  .container{
+  	height: 100px;
+  	/*只有IE6和IE7会忽略*/
+  	*height: 200px;
+  }
+</code></pre></li><li><p>IE8：</p><pre><code>  /*IE6-8不支持:root选择器*/
+  :root .selector{   
+  	/*IE6-8 Style*/
+  }
+</code></pre></li></ul><p>注：<code>：root</code>匹配文档的根元素。<br>
+以及：</p><pre><code>    .selector{
+	    color: #fff;
+	    /*IE6-8会忽略“\9”*/
+	    color: #fff\9;
+    }
+</code></pre><hr><p>比如:</p><pre><code>.tip{
+	background: blue;
+	background: red\9;
+	*background: black;
+	_background: yellow;
+}
+</code></pre><h2 id="css2选择器兼容性"><a href="#css2选择器兼容性" aria-hidden="true" class="header-anchor">#</a> CSS2选择器兼容性</h2><p>主要兼容性问题在IE6-7中。</p><h3 id="ie6-7不支持伪元素"><a href="#ie6-7不支持伪元素" aria-hidden="true" class="header-anchor">#</a> IE6-7不支持伪元素</h3><pre><code>不支持：before和：after
+</code></pre><p>解决方法是：改变实现方式，或在HTML中添加标签。</p><h3 id="ie6-7不支持：focus伪类"><a href="#ie6-7不支持：focus伪类" aria-hidden="true" class="header-anchor">#</a> IE6-7不支持：focus伪类</h3><p>解决方法：使用JavaScript</p><h2 id="css3选择器兼容性"><a href="#css3选择器兼容性" aria-hidden="true" class="header-anchor">#</a> CSS3选择器兼容性</h2><blockquote><p>CSS3中的大部分选择器，兼容性是IE9+
+例如：</p></blockquote><pre><code>:target
+:empty
+:nth-child
+:nth-of-type
+:check
+:disabled
+</code></pre><blockquote><p>移动端支持绝大多数CSS3选择器</p></blockquote><h3 id="ie6-7不支持块级元素inline-block"><a href="#ie6-7不支持块级元素inline-block" aria-hidden="true" class="header-anchor">#</a> IE6-7不支持块级元素<code>inline-block</code></h3><blockquote><p>行级元素支持，而块级元素不支持</p></blockquote><p>解决方法</p><pre><code>.selector{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+</code></pre><h3 id="ie6-7不支持display-table"><a href="#ie6-7不支持display-table" aria-hidden="true" class="header-anchor">#</a> IE6-7不支持<code>display:table</code>;</h3><pre><code>请使用float或inline-block布局  //局部鼓励用inline-block
+不要使用table布局
+</code></pre><h3 id="css3的支持情况"><a href="#css3的支持情况" aria-hidden="true" class="header-anchor">#</a> CSS3的支持情况</h3><blockquote><p><strong>CSS3属性：</strong><br>
+IE7不支持<br>
+IE8部分支持<br>
+IE基本支持</p></blockquote><ul><li><p>IE8支持</p><pre><code>  box-sizing
+  outline
+</code></pre></li><li><p>IE8不支持</p><pre><code>  background-size（容器本身尺寸不固定的时候使用）：推荐在IE8及以下使用固定宽度布局
+  border-radius    
+  box-shadow   
+  opacity：filter：alpha(opacity=50)  
+  rgba、hsl、hsla: 一般场景下，使用相近的不透明颜色替代；alpha可以通过增加额外元素，并设置透明度实现  
+  rem/vh/vw/calc: 降级为固定宽度
+</code></pre></li><li><p>IE9不支持</p><pre><code>  transition与animation：可以接受的降级，实在不行用JavaScript
+</code></pre></li><li><p>media query</p><pre><code>  基本的媒体（all/print/screen/speech）都支持   
+  媒体特性（width/height/orientation..）IE9及以上：还是建议IE8及以下使用固定宽度布局
+</code></pre></li></ul><h2 id="浏览器前缀"><a href="#浏览器前缀" aria-hidden="true" class="header-anchor">#</a> 浏览器前缀</h2><blockquote><p>浏览器厂商为了实验一些新特性，在属性名前加前缀<br>
+chrome/safari/opera: -webkit-<br>
+Microsoft: -ms-<br>
+Mozilla: -moz-</p></blockquote><p>比如：</p><pre><code>.example{
+	-webkit-transform: translate(100px,0);
+		-ms-transform: translate(100px,0);
+			transform: translate(100px,0);
+}
+</code></pre><p>注意的是，一般会将加前缀的属性放在前面。</p><h2 id="语义化的html5标签"><a href="#语义化的html5标签" aria-hidden="true" class="header-anchor">#</a> 语义化的HTML5标签</h2><pre><code>&lt;style&gt;
+	article, main, nav, aside, section, 
+	header,footer, figure, figcaption{
+		display: block;
+	}
+&lt;/style&gt;
+</code></pre><p>用JS插件来解决</p><pre><code>&lt;!--[if lte IE 8]&gt;
+	&lt;script src=&quot;html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre><h2 id="浏览器bug"><a href="#浏览器bug" aria-hidden="true" class="header-anchor">#</a> 浏览器bug</h2></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/vuepress_surface/HttpCode.html" class="prev">
+          常见HTTP状态码
+        </a></span><span class="next"><a href="/vuepress_surface/VerticalCenter.html">
+          垂直居中的几种方法
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/vuepress_surface/assets/js/12.25d3a5c6.js" defer></script><script src="/vuepress_surface/assets/js/app.9a89dc1f.js" defer></script>
+  </body>
+</html>
